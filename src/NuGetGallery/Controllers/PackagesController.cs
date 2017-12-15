@@ -1643,7 +1643,7 @@ namespace NuGetGallery
                 catch (InvalidPackageException ex)
                 {
                     _telemetryService.TraceException(ex);
-                    
+
                     return Json(400, new[] { ex.Message });
                 }
 
