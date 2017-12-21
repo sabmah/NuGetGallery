@@ -78,7 +78,7 @@ namespace NuGetGallery
 
         private static bool CanPerformAction(User currentUser, Package package, ActionRequiringPackagePermissions action)
         {
-            return action.TryGetAccountsAllowedOnBehalfOf(currentUser, package, out var accountsAllowedOnBehalfOf);
+            return action.CheckPermissionsOnBehalfOfAnyAccount(currentUser, package) == PermissionsCheckResult.Allowed;
         }
     }
 }
